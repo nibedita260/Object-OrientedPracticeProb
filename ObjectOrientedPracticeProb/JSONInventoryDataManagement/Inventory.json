@@ -1,0 +1,19 @@
+//JSON file having Inventory Details for Rice, Pulses and Wheats with properties name, weight, price per kg.
+
+[
+  {
+    "Name": "Rice",
+    "Weight": 25,
+    "Price": 1500
+  },
+  {
+    "Name": "Pulses",
+    "Weight": 25,
+    "Price": 4000
+  },
+  {
+    "Name": "Wheats",
+    "Weight": 25,
+    "Price": 1125
+  }
+]
