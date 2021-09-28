@@ -1,0 +1,53 @@
+{
+  "RiceList": [
+    {
+      "Name": "Basmati",
+      "Weight": 25,
+      "Price": 1500
+    },
+    {
+      "Name": "Biriyani",
+      "Weight": 25,
+      "Price": 4000
+    },
+    {
+      "Name": "Rajbhog",
+      "Weight": 25,
+      "Price": 1125
+    }
+  ],
+  "PulseList": [
+    {
+      "Name": "Chickpeas",
+      "Weight": 3,
+      "Price": 360
+    },
+    {
+      "Name": "BakedBeans",
+      "Weight": 3,
+      "Price": 1770
+    },
+    {
+      "Name": "Black-eyedPeas",
+      "Weight": 3,
+      "Price": 250
+    }
+  ],
+  "WheatList": [
+    {
+      "Name": "Bajra",
+      "Weight": 2,
+      "Price": 44
+    },
+    {
+      "Name": "Jowar",
+      "Weight": 2,
+      "Price": 66
+    },
+    {
+      "Name": "Baeley",
+      "Weight": 2,
+      "Price": 56
+    }
+  ]
+}
