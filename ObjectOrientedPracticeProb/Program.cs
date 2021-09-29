@@ -25,6 +25,9 @@ namespace ObjectOrientedPracticeProb.JSONInventoryDataManagement
                         case 2:
                             inventoryManger.ReadData(filepathJsonList);
                             inventoryManger.DisplayData("Rice");
+                            inventoryManger.EditData("Pulse");
+                            inventoryManger.DeleteData("Pulse");
+                            inventoryManger.AddData("Pulse");
                             break;
                         default:
                             Console.WriteLine("Choose valid option");
