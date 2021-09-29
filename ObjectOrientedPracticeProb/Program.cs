@@ -5,6 +5,8 @@ namespace ObjectOrientedPracticeProb.JSONInventoryDataManagement
     {
         class Program
         {
+            static string filepathJson = @"D:\git\Object-OrientedPracticeProb\ObjectOrientedPracticeProb\JSONInventoryDataManagement\Inventory.json";
+            static string filepathJsonList=@"D:\git\Object-OrientedPracticeProb\ObjectOrientedPracticeProb\InventoryManagementProgram\Inventory.json";
             static void Main(string[] args)
             {
                 InventoryManagementProgram.InventoryManger inventoryManger = new InventoryManagementProgram.InventoryManger();
@@ -18,10 +20,10 @@ namespace ObjectOrientedPracticeProb.JSONInventoryDataManagement
                     {
                         case 1:
                             InventoryMain inventoryMain = new InventoryMain();
-                            inventoryMain.DisplayData(@"D:\git\Object-OrientedPracticeProb\ObjectOrientedPracticeProb\JSONInventoryDataManagement\Inventory.json");
+                            inventoryMain.DisplayData(filepathJson);
                             break;
                         case 2:
-                            inventoryManger.ReadData(@"D:\git\Object-OrientedPracticeProb\ObjectOrientedPracticeProb\InventoryManagementProgram\Inventory.json");
+                            inventoryManger.ReadData(filepathJsonList);
                             inventoryManger.DisplayData("Rice");
                             break;
                         default:

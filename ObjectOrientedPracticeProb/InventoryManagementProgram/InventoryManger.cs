@@ -9,9 +9,9 @@ namespace ObjectOrientedPracticeProb.InventoryManagementProgram
 {
     class InventoryManger
     {
-        public List<InventoryFactory.Rice> Rice;
-        public List<InventoryFactory.Pulse> Pulse;
-        public List<InventoryFactory.Wheat> Wheat;
+        public List<InventoryModel> Rice;
+        public List<InventoryModel> Pulse;
+        public List<InventoryModel> Wheat;
         public void ReadData(string filepath)
         {
             try
@@ -19,12 +19,8 @@ namespace ObjectOrientedPracticeProb.InventoryManagementProgram
                 using (StreamReader r = new StreamReader(filepath))//@"D:\git\Object-OrientedPracticeProb\ObjectOrientedPracticeProb\InventoryManagementProgram\Inventory.json"
                 {
                     var json = r.ReadToEnd();
-                    Console.WriteLine(json);
-                   // dynamic dObject = JObject.Parse(json);
                     InventoryFactory items = JsonConvert.DeserializeObject<InventoryFactory>(json);
-                    Console.WriteLine(items);
                     Rice= items.RiceList;
-                    Console.WriteLine(Rice);
                     Pulse = items.PulseList;
                     Wheat = items.WheatList;
                 }
@@ -43,7 +39,7 @@ namespace ObjectOrientedPracticeProb.InventoryManagementProgram
                 if (state == "Rice")
                 {
                     Console.WriteLine("Name\tWeight\tPrice");
-                    foreach(var item in riceList)
+                    foreach(var item in Rice)
                     {
                         Console.WriteLine("{0}" + "\t" + "{1}" + "\t" + "{2}", item.Name, item.Weight, item.Price);
                     }
@@ -51,7 +47,7 @@ namespace ObjectOrientedPracticeProb.InventoryManagementProgram
                 if (state == "Pulse")
                 {
                     Console.WriteLine("Name\tWeight\tPrice");
-                    foreach (var item in pulseList)
+                    foreach (var item in Pulse)
                     {
                         Console.WriteLine("{0}" + "\t" + "{1}" + "\t" + "{2}", item.Name, item.Weight, item.Price);
                     }
@@ -59,7 +55,7 @@ namespace ObjectOrientedPracticeProb.InventoryManagementProgram
                 if (state == "Wheat")
                 {
                     Console.WriteLine("Name\tWeight\tPrice");
-                    foreach (var item in wheatList)
+                    foreach (var item in Wheat)
                     {
                         Console.WriteLine("{0}" + "\t" + "{1}" + "\t" + "{2}", item.Name, item.Weight, item.Price);
                     }
