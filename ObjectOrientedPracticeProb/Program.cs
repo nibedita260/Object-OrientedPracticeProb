@@ -6,15 +6,15 @@ namespace ObjectOrientedPracticeProb.JSONInventoryDataManagement
         class Program
         {
             static string filepathJson = @"D:\git\Object-OrientedPracticeProb\ObjectOrientedPracticeProb\JSONInventoryDataManagement\Inventory.json";
-            static string filepathJsonList=@"D:\git\Object-OrientedPracticeProb\ObjectOrientedPracticeProb\InventoryManagementProgram\Inventory.json";
-            static void Main(string[] args)
+            static string filepathInventoryList=@"D:\git\Object-OrientedPracticeProb\ObjectOrientedPracticeProb\InventoryManagementProgram\Inventory.json";
+           static void Main(string[] args)
             {
                 InventoryManagementProgram.InventoryManger inventoryManger = new InventoryManagementProgram.InventoryManger();
                 bool isExit = false;
                 int options;
                 while (!isExit)
                 {
-                    Console.WriteLine("Choose 1.JSONInventoryDataManagement 2.InventoryManagementProgram");
+                    Console.WriteLine("Choose 1.JSONInventoryDataManagement 2.InventoryManagementProgram ");
                     options = Convert.ToInt32(Console.ReadLine());
                     switch (options)
                     {
@@ -23,11 +23,11 @@ namespace ObjectOrientedPracticeProb.JSONInventoryDataManagement
                             inventoryMain.DisplayData(filepathJson);
                             break;
                         case 2:
-                            inventoryManger.ReadData(filepathJsonList);
-                            inventoryManger.DisplayData("Rice");
-                            inventoryManger.EditData("Pulse");
-                            inventoryManger.DeleteData("Pulse");
-                            inventoryManger.AddData("Pulse");
+                            inventoryManger.ReadData(filepathInventoryList);
+                            inventoryManger.DisplayData();
+                            inventoryManger.EditData();
+                            inventoryManger.DeleteData();
+                            inventoryManger.AddData();
                             break;
                         default:
                             Console.WriteLine("Choose valid option");
