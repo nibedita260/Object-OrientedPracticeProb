@@ -1,24 +1,17 @@
-{
-  "Lenevo": [
-    {
-      "Name": "Lenevo",
-      "NumberOfShares": "23.9%",
-      "Price": "$13.29B"
-    }
-  ],
-  "HP": [
-    {
-      "Name": "Hp",
-      "NumberOfShares": "21.8%",
-      "Price": "$33.09B"
-    }
-  ],
-  "DELL": [
-    {
-      "Name": "DELL",
-      "NumberOfShares": "19.6%",
-      "Price": "$80.24B"
-
-    }
-  ]
-}
+[
+  {
+    "Name": "Lenevo",
+    "NumberOfShares": 23,
+    "Price": 13
+  },
+  {
+    "Name": "Hp",
+    "NumberOfShares": 21,
+    "Price": 33
+  },
+  {
+    "Name": "DELL",
+    "NumberOfShares": 19,
+    "Price": 80
+  }
+]
