@@ -108,7 +108,8 @@ namespace ObjectOrientedPracticeProb.StockManagement
                                 string result = JsonConvert.SerializeObject(stockData);
                                 File.WriteAllText(filepathJson, result);
                             }
-                        }catch(Exception e)
+                        }
+                        catch (Exception e)
                         {
                             Console.WriteLine(e.Message);
                         }

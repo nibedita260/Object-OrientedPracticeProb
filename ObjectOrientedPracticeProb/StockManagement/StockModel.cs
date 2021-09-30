@@ -9,10 +9,6 @@ namespace ObjectOrientedPracticeProb.StockManagement
         public string Name { get; set; }
         public int NumberOfShares { get; set; }
         public int Price { get; set; }
-<<<<<<< HEAD
-=======
         public string DateTime{ get; set; }
->>>>>>> UC5-CommercialDataProcessing
-
     }
 }
