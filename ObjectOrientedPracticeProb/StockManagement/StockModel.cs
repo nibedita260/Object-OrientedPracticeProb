@@ -7,8 +7,8 @@ namespace ObjectOrientedPracticeProb.StockManagement
     class StockModel
     {
         public string Name { get; set; }
-        public string NumberOfShares { get; set; }
-        public string Price { get; set; }
+        public int NumberOfShares { get; set; }
+        public int Price { get; set; }
 
     }
 }

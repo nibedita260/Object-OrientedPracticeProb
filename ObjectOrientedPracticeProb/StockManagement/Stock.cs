@@ -34,10 +34,10 @@ namespace ObjectOrientedPracticeProb.StockManagement
                 Console.WriteLine(e.Message);
             }
         }
-        public void DisplayData(string stocks)
+        public void DisplayData()
         {
             Console.WriteLine("enter any one of stock-[ Lenevo Or HP Or Dell] which you want to display of that stock Management");
-            stocks = Console.ReadLine();
+            string stocks = Console.ReadLine();
             try
             {
                 if (stocks == "lenevo")

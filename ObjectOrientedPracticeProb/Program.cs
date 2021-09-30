@@ -25,15 +25,15 @@ namespace ObjectOrientedPracticeProb.JSONInventoryDataManagement
                             break;
                         case 2:
                             inventoryManger.ReadData(filepathInventoryList);
-                            inventoryManger.DisplayData("Rice");
-                            inventoryManger.EditData("Pulse");
-                            inventoryManger.DeleteData("Pulse");
-                            inventoryManger.AddData("Pulse");
+                            inventoryManger.DisplayData();
+                            inventoryManger.EditData();
+                            inventoryManger.DeleteData();
+                            inventoryManger.AddData();
                             break;
                         case 3:
                             StockManagement.Stock stock = new StockManagement.Stock();
                             stock.ReadData(filepathStockList);
-                            stock.DisplayData("hp");
+                            stock.DisplayData();
                             break;
                         default:
                             Console.WriteLine("Choose valid option");
