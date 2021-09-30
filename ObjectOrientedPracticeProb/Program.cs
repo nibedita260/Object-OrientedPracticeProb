@@ -11,6 +11,7 @@ namespace ObjectOrientedPracticeProb.JSONInventoryDataManagement
             static void Main(string[] args)
             {
                 InventoryManagementProgram.InventoryManger inventoryManger = new InventoryManagementProgram.InventoryManger();
+                StockManagement.Stock stock = new StockManagement.Stock();
                 bool isExit = false;
                 int options;
                 while (!isExit)
@@ -25,15 +26,16 @@ namespace ObjectOrientedPracticeProb.JSONInventoryDataManagement
                             break;
                         case 2:
                             inventoryManger.ReadData(filepathInventoryList);
-                            inventoryManger.DisplayData();
+                            //inventoryManger.DisplayData();
                             inventoryManger.EditData();
-                            inventoryManger.DeleteData();
-                            inventoryManger.AddData();
+                            //inventoryManger.DeleteData();
+                            //inventoryManger.AddData();
                             break;
                         case 3:
-                            StockManagement.Stock stock = new StockManagement.Stock();
                             stock.ReadData(filepathStockList);
-                            stock.DisplayData();
+                            stock.DisplayStocks();
+                            stock.BuyStocks();
+                            stock.SellStocks();
                             break;
                         default:
                             Console.WriteLine("Choose valid option");

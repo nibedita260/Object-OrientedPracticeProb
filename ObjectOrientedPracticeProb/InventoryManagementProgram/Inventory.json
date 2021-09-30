@@ -1,4 +1,4 @@
-﻿{
+{
   "RiceList": [
     {
       "Name": "Basmati",
@@ -19,18 +19,18 @@
   "PulseList": [
     {
       "Name": "Chickpeas",
-      "Weight": 3,
+      "Weight": 4,
       "Price": 360
-    },
-    {
-      "Name": "BakedBeans",
-      "Weight": 3,
-      "Price": 1770
     },
     {
       "Name": "Black-eyedPeas",
       "Weight": 3,
-      "Price": 250
+      "Price": 200
+    },
+    {
+      "Name": "BakedBeans",
+      "Weight": 5,
+      "Price": 1000
     }
   ],
   "WheatList": [

@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Lenevo",
+    "NumberOfShares": 23,
+    "Price": 13
+  },
+  {
+    "Name": "Hp",
+    "NumberOfShares": 21,
+    "Price": 33
+  },
+  {
+    "Name": "DELL",
+    "NumberOfShares": 19,
+    "Price": 80
+  }
+]
