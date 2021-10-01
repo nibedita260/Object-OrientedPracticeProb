@@ -1,17 +1,20 @@
 [
   {
     "Name": "Lenevo",
-    "NumberOfShares": 23,
-    "Price": 13
+    "NumberOfShares": 27,
+    "Price": 13,
+    "DateTime": null
   },
   {
     "Name": "Hp",
     "NumberOfShares": 21,
-    "Price": 33
+    "Price": 33,
+    "DateTime": null
   },
   {
     "Name": "DELL",
     "NumberOfShares": 19,
-    "Price": 80
+    "Price": 80,
+    "DateTime": null
   }
 ]

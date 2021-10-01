@@ -90,39 +90,35 @@ namespace ObjectOrientedPracticeProb.StockManagement
                         StockModel stockModel = new StockModel();
                         Console.WriteLine("enter numOfShares you want to buy for employeeStock");
                         int numOfShares = Convert.ToInt32(Console.ReadLine());
-                        stock.NumberOfShares += numOfShares;
+                        stock.NumberOfShares -= numOfShares;
                         stockModel = stock;
                         //update the filepathJson file to the specific NumberOfShares
                         try
                         {
-                            using (StreamReader r = new StreamReader(filepathJson))
+                            StreamReader r = new StreamReader(filepathJson);
+                            var json = r.ReadToEnd();
+                            var stockData = JsonConvert.DeserializeObject<List<StockModel>>(json);
+                            foreach (var data in stockData)
                             {
-                                var json = r.ReadToEnd();
-                                var stockData = JsonConvert.DeserializeObject<List<StockModel>>(json);
-                                foreach (var data in stockData)
-                                {
-                                    if (data.Name == stock.Name)
-                                        data.NumberOfShares -= numOfShares;
-                                }
-                                //serialize the string to json
-                                string result = JsonConvert.SerializeObject(stockData);
-                                File.WriteAllText(filepathJson, result);
+                                if (data.Name == stock.Name)
+                                    data.NumberOfShares += numOfShares;
                             }
+                            r.Close();
+                            //serialize the string to json
+                            string result = JsonConvert.SerializeObject(stockData);
+                            File.WriteAllText(filepathJson, result);
                         }
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message);
                         }
+                        //serialize the string to json
+                        string res = JsonConvert.SerializeObject(stocks);
+                        File.WriteAllText(filepath, res);
+                        return;
                     }
                 }
-                //if stock does not exist,create a new stock and update to the stockList
-                StockModel stockModel1 = new StockModel();
-                stockModel1.Name = name;
-                employee.Add(stockModel1);
-                stocks.Employee = employee;
-                //serialize the string to json
-                string output = JsonConvert.SerializeObject(stocks);
-                File.WriteAllText(filepath, output);
+                Console.WriteLine("Stock does not found");
             }
         }
         public void SellStocks()
