@@ -7,7 +7,7 @@ namespace ObjectOrientedPracticeProb.JSONInventoryDataManagement
         {
             static string filepathJson = @"D:\git\Object-OrientedPracticeProb\ObjectOrientedPracticeProb\JSONInventoryDataManagement\Inventory.json";
             static string filepathInventoryList=@"D:\git\Object-OrientedPracticeProb\ObjectOrientedPracticeProb\InventoryManagementProgram\Inventory.json";
-            static string filepathStockList = @"D:\git\Object-OrientedPracticeProb\ObjectOrientedPracticeProb\StockManagement\Stock.json";
+            static string filepathStockList = @"D:\git\Object-OrientedPracticeProb\ObjectOrientedPracticeProb\StockManagement\Transaction.json";
             static void Main(string[] args)
             {
                 InventoryManagementProgram.InventoryManger inventoryManger = new InventoryManagementProgram.InventoryManger();
@@ -35,7 +35,7 @@ namespace ObjectOrientedPracticeProb.JSONInventoryDataManagement
                             stock.ReadData(filepathStockList);
                             stock.DisplayStocks();
                             stock.BuyStocks();
-                            stock.SellStocks();
+                            //stock.SellStocks();
                             break;
                         default:
                             Console.WriteLine("Choose valid option");

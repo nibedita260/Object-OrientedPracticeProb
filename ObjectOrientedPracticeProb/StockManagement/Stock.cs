@@ -9,7 +9,7 @@ namespace ObjectOrientedPracticeProb.StockManagement
     class Stock
     {
         static string filepathJson = @"D:\git\Object-OrientedPracticeProb\ObjectOrientedPracticeProb\StockManagement\StockJson.json";
-        static string filepath = @"D:\git\Object-OrientedPracticeProb\ObjectOrientedPracticeProb\StockManagement\Stock.json";
+        static string filepath = @"D:\git\Object-OrientedPracticeProb\ObjectOrientedPracticeProb\StockManagement\Transaction.json";
         public List<StockModel> employee;
         public List<StockModel> accountant;
         public List<StockModel> manager;
@@ -82,46 +82,76 @@ namespace ObjectOrientedPracticeProb.StockManagement
             {
                 Console.WriteLine("enter the employeeStock name which you want to buy");
                 string name = Console.ReadLine();
-                foreach (var stock in employee)
+                foreach (var stock in employee.ToArray())
                 {
                     if (stock.Name == name)
                     {
                         stock.DateTime = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-                        StockModel stockModel = new StockModel();
                         Console.WriteLine("enter numOfShares you want to buy for employeeStock");
                         int numOfShares = Convert.ToInt32(Console.ReadLine());
-                        stock.NumberOfShares += numOfShares;
+                        stock.NumberOfShares -= numOfShares;
                         stockModel = stock;
                         //update the filepathJson file to the specific NumberOfShares
                         try
                         {
-                            using (StreamReader r = new StreamReader(filepathJson))
+                            StreamReader r = new StreamReader(filepathJson);
+                            var json = r.ReadToEnd();
+                            var stockData = JsonConvert.DeserializeObject<List<StockModel>>(json);
+                            foreach (var data in stockData)
                             {
-                                var json = r.ReadToEnd();
-                                var stockData = JsonConvert.DeserializeObject<List<StockModel>>(json);
-                                foreach (var data in stockData)
-                                {
-                                    if (data.Name == stock.Name)
-                                        data.NumberOfShares -= numOfShares;
-                                }
-                                //serialize the string to json
-                                string result = JsonConvert.SerializeObject(stockData);
-                                File.WriteAllText(filepathJson, result);
+                                if (data.Name == stock.Name)
+                                    data.NumberOfShares += numOfShares;
                             }
-                        }catch(Exception e)
+                            r.Close();
+                            //serialize the string to json
+                            string result = JsonConvert.SerializeObject(stockData);
+                            File.WriteAllText(filepathJson, result);
+                        }
+                        catch (Exception e)
                         {
                             Console.WriteLine(e.Message);
                         }
+                        //serialize the string to json
+                        string stockRes = JsonConvert.SerializeObject(stocks);
+                        File.WriteAllText(filepath, stockRes);
+                        return;
                     }
                 }
                 //if stock does not exist,create a new stock and update to the stockList
-                StockModel stockModel1 = new StockModel();
-                stockModel1.Name = name;
-                employee.Add(stockModel1);
+                stockModel.Name = name;
+                stockModel.NumberOfShares = 5;
+                stockModel.Price = 10;
+                stockModel.DateTime = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                Console.WriteLine("enter numOfShares you want to buy for employeeStock");
+                int numOfShare = Convert.ToInt32(Console.ReadLine());
+                stockModel.NumberOfShares -= numOfShare;
+                employee.Add(stockModel);
                 stocks.Employee = employee;
+                //update the filepathJson file to the specific NumberOfShares
+                try
+                {
+                    StreamReader r = new StreamReader(filepathJson);
+                    var json = r.ReadToEnd();
+                    var stockData = JsonConvert.DeserializeObject<List<StockModel>>(json);
+                    stockModel.Name = name;
+                    stockModel.NumberOfShares = 5;
+                    stockModel.Price = 10;
+                    stockModel.DateTime = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                    stockData.Add(stockModel);
+                    stocks.Employee = employee;
+                    r.Close();
+                    //serialize the string to json
+                    string result = JsonConvert.SerializeObject(stockData);
+                    File.WriteAllText(filepathJson, result);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
                 //serialize the string to json
-                string output = JsonConvert.SerializeObject(stocks);
-                File.WriteAllText(filepath, output);
+                string stockResult = JsonConvert.SerializeObject(stocks);
+                File.WriteAllText(filepath, stockResult);
+                return;
             }
         }
         public void SellStocks()
