@@ -1,7 +1,11 @@
 [
   {
     "Name": "Lenevo",
+<<<<<<< HEAD
     "NumberOfShares": 27,
+=======
+    "NumberOfShares": 34,
+>>>>>>> UC5-CommercialDataProcessing
     "Price": 13,
     "DateTime": null
   },
@@ -16,5 +20,26 @@
     "NumberOfShares": 19,
     "Price": 80,
     "DateTime": null
+<<<<<<< HEAD
+=======
+  },
+  {
+    "Name": "Apple",
+    "NumberOfShares": 6,
+    "Price": 10,
+    "DateTime": "03-10-2021 20:58:01"
+  },
+  {
+    "Name": "Telsa",
+    "NumberOfShares": 15,
+    "Price": 50,
+    "DateTime": "03-10-2021 23:49:50"
+  },
+  {
+    "Name": "Iphone",
+    "NumberOfShares": 7,
+    "Price": 10,
+    "DateTime": "04-10-2021 00:00:44"
+>>>>>>> UC5-CommercialDataProcessing
   }
 ]
